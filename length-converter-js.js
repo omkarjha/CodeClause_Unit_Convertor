@@ -1,22 +1,19 @@
 const objFormula = JSON.parse(formula);
 
-function ValidateLengthConverterForm()
-{
+function ValidateLengthConverterForm() {
     _cmnRemoveAllErrorMessage();
-    
+
     var fromLength = document.getElementById("fromLength").value;
-    if(fromLength == "" || isNaN(fromLength)  || (!isNaN(fromLength) && Number(fromLength) <= 0))
-    {
+    if (fromLength == "" || isNaN(fromLength) || (!isNaN(fromLength) && Number(fromLength) <= 0)) {
         _cmnShowErrorMessageBottomOfTheInputFiled("fromLength", "Enter valid Length.");
         return false;
     }
-    
+
     return true;
 }
 
-function RestLengthConverter()
-{
-    if(confirm("Are you sure want to reset the converter?")){
+function RestLengthConverter() {
+    if (confirm("Are you sure want to reset the converter?")) {
         document.getElementById("fromLength").value = "";
         document.getElementById("fromUnit").value = "Centimeter";
         document.getElementById("toUnit").value = "Millimeter";
@@ -29,10 +26,8 @@ function RestLengthConverter()
     }
 }
 
-function CalculateLength()
-{
-    if(ValidateLengthConverterForm())
-    {
+function CalculateLength() {
+    if (ValidateLengthConverterForm()) {
         var fromUnit = document.getElementById("fromUnit").value;
         var toUnit = document.getElementById("toUnit").value;
         var fromLength = document.getElementById("fromLength").value;
@@ -40,9 +35,9 @@ function CalculateLength()
 
         ShowFormula(fromUnit, toUnit);
 
-        var result = ConvertLength(fromLength, fromUnit,  toUnit);
-        outputlength.value = Number(result).toFixed(2);      
-        document.getElementById("lengthResult").innerHTML = fromLength + ' ' + fromUnit + ' = ' + result.toFixed(2) + ' ' + toUnit; 
+        var result = ConvertLength(fromLength, fromUnit, toUnit);
+        outputlength.value = Number(result).toFixed(2);
+        document.getElementById("lengthResult").innerHTML = fromLength + ' ' + fromUnit + ' = ' + result.toFixed(2) + ' ' + toUnit;
 
         //result div show
         _cmnHideElement("OutputInfo");
@@ -50,16 +45,14 @@ function CalculateLength()
     }
 }
 
-function ConvertLength(fromLength, fromUnit,  toUnit)
-{
+function ConvertLength(fromLength, fromUnit, toUnit) {
     fromLength = Number(fromLength);
     var result = 0;
     var makeThisMillimeter = 0;
     var inMillimeter = 0;
 
     // first make the given unit to millimeter
-    switch (fromUnit)
-    {
+    switch (fromUnit) {
         case "Millimeter":
             makeThisMillimeter = 1;
             break;
@@ -91,8 +84,7 @@ function ConvertLength(fromLength, fromUnit,  toUnit)
     inMillimeter = fromLength * makeThisMillimeter;
 
     //convert the millimiter value to the targeted unit
-    switch (toUnit)
-    {
+    switch (toUnit) {
         case "Millimeter":
             result = inMillimeter;
             break;
@@ -124,17 +116,14 @@ function ConvertLength(fromLength, fromUnit,  toUnit)
     return result;
 }
 
-function ShowFormula(fromUnit,toUnit)
-{
+function ShowFormula(fromUnit, toUnit) {
     document.getElementById("lengthFormula").innerHTML = "";
 
-    for(var i = 0; i <objFormula.conversions.length; i++)
-    {            
-        if(
-            objFormula.conversions[i].from.toLowerCase() == fromUnit.toLowerCase() 
+    for (var i = 0; i < objFormula.conversions.length; i++) {
+        if (
+            objFormula.conversions[i].from.toLowerCase() == fromUnit.toLowerCase()
             && objFormula.conversions[i].to.toLowerCase() == toUnit.toLowerCase()
-            )
-        {
+        ) {
             document.getElementById("lengthFormula").innerHTML = objFormula.conversions[i].formula;
         }
     }

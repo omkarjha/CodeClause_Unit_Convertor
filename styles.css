@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,17 +8,20 @@
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
 }
-body{
-    background-color: #e2e2e2;
+
+body {
+    background-color: rgba(201, 230, 76, 0.486);
 }
-.tool-container{ 
+
+.tool-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50rem;
     margin: 100px auto 0px auto;
 }
-.tool-container h1{
+
+.tool-container h1 {
     display: block;
     text-align: center;
     margin: 20px 10px;
@@ -26,13 +30,15 @@ body{
     font-size: 40px;
     font-weight: 700;
 }
-.tool-container-field-group{
+
+.tool-container-field-group {
     display: flex;
     width: 100%;
     flex-direction: column;
     margin-left: 22.5rem;
 }
-.tool-container-field{
+
+.tool-container-field {
     display: block;
     width: 50%;
     padding: 10px;
@@ -41,26 +47,30 @@ body{
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.tool-input-group{
+
+.tool-input-group {
     display: flex;
     justify-items: center;
     justify-content: space-between;
-    width: 100%;    
+    width: 100%;
     margin: 5px auto;
     position: relative;
     padding: 10px 5px;
     border-bottom: 1px solid rgb(222, 228, 228);
 }
-.tool-input-group:last-child{
+
+.tool-input-group:last-child {
     border: none;
 }
-.tool-input-label{
+
+.tool-input-label {
     display: block;
     font-size: 20px;
     line-height: 40px;
-    min-width: 60px; 
+    min-width: 60px;
 }
-.tool-input-field{
+
+.tool-input-field {
     display: block;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     width: 150px;
@@ -69,7 +79,8 @@ body{
     border-radius: 5px;
     padding: 5px;
 }
-.tool-btn{
+
+.tool-btn {
     border: none;
     cursor: pointer;
     min-width: 100px;
@@ -77,36 +88,41 @@ body{
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 20px;
-    color: aliceblue;    
+    color: aliceblue;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.tool-btn:hover{
+
+.tool-btn:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-.tool-btn-reset{
+
+.tool-btn-reset {
     width: 150px;
     margin-left: 0px;
     background: rgb(68, 214, 63);
     color: rgb(58, 25, 25);
 }
-.tool-select-group{
+
+.tool-select-group {
     float: right;
     border: none;
     height: 35px;
     min-width: 100px;
     text-align: center;
-    border-right:5px ;
+    border-right: 5px;
     border-radius: 5px;
     font-weight: 700;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
 }
-.tool-btn-calculate{
+
+.tool-btn-calculate {
     width: 150px;
     margin-right: 0px;
     background: rgb(17, 0, 248);
 }
-.tool-output-box{
+
+.tool-output-box {
     display: none;
     width: 100%;
     height: 100%;
@@ -114,40 +130,47 @@ body{
     justify-content: center;
     align-items: center;
 }
-.tool-output-box ul{
+
+.tool-output-box ul {
     margin: 5px;
     margin-left: 25px;
 }
-.tool-output-box ul li{
+
+.tool-output-box ul li {
     padding: 2px;
     font-size: 12px;
-}  
-
-#OutputInfo{
-    display: flex;
-    
 }
-.tool-output-box h2{
+
+#OutputInfo {
+    display: flex;
+
+}
+
+.tool-output-box h2 {
     text-align: center;
     margin-bottom: 10px;
     font-size: 30px;
     font-family: 'Playfair Display', serif;
 }
-.tool-output-box p{
+
+.tool-output-box p {
     text-align: left;
     margin-top: 10px;
     font-size: 20px;
     align-self: flex-start;
-    
+
 }
-.tool-output-box table tr{
+
+.tool-output-box table tr {
     height: 30px;
 }
-.tool-output-table{
+
+.tool-output-table {
     width: 100%;
     font-size: 25px;
 }
-.tool-author-intro{
+
+.tool-author-intro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,21 +179,26 @@ body{
     font-family: 'Bitter', serif;
     margin-top: 5rem;
 }
-.tool-author-intro p{
+
+.tool-author-intro p {
     margin: 5px;
 }
-.tool-author-intro a{
+
+.tool-author-intro a {
     text-decoration: none;
     color: rgb(20, 124, 150);
     transition: .5s;
 }
-.tool-author-intro a:hover{
+
+.tool-author-intro a:hover {
     color: rgb(84, 134, 95);
 }
-.tool-error-border{
+
+.tool-error-border {
     border: 2px solid red;
 }
-.tool-error-message{
+
+.tool-error-message {
     display: block;
     color: red;
     font-size: 11px;
@@ -181,6 +209,7 @@ body{
     bottom: 1px;
     right: 0px;
 }
-.tool-readonly-background{
+
+.tool-readonly-background {
     background: #E5E5E5;
 }
